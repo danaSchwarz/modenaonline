@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Favorites from "./Favorites/Favorites.jsx";
 import SignIn from './SignIn/SignIn.jsx';
 import Home from "./Home/Home.jsx";
@@ -16,6 +16,8 @@ export default function Pages() {
   return (
     <Routes>
       <Route path="/" element={<Home />}></Route>
+      <Route path="/modenaonline" element={<Navigate to="/" replace={true} />} />
+
       <Route path="/about" element={<About />}></Route>
       <Route path="/products" element={<Products />}></Route>
       <Route path="/products/:id" element={<ProductDetails />}>
